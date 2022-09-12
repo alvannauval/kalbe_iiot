@@ -2,7 +2,7 @@
     {
         "id": "f6f2187d.f17ca8",
         "type": "tab",
-        "label": "Main Flow",
+        "label": "Flow 1",
         "disabled": false,
         "info": ""
     },
@@ -260,7 +260,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "1",
+        "repeat": "1.5",
         "crontab": "",
         "once": true,
         "onceDelay": "0",
@@ -345,8 +345,8 @@
             [
                 "8aced67458cc7b01",
                 "a698ba5049997946",
-                "5c6fc5d9c5cda774",
-                "f26cb74b3eb5fe39"
+                "f26cb74b3eb5fe39",
+                "5c6fc5d9c5cda774"
             ]
         ]
     },
@@ -381,7 +381,7 @@
         "errorHandling": "throw",
         "outputs": 1,
         "x": 540,
-        "y": 900,
+        "y": 1020,
         "wires": [
             [
                 "5ac51d900f03af14"
@@ -402,7 +402,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1110,
-        "y": 940,
+        "y": 1060,
         "wires": []
     },
     {
@@ -419,7 +419,7 @@
         "errorHandling": "throw",
         "outputs": 1,
         "x": 540,
-        "y": 980,
+        "y": 1100,
         "wires": [
             [
                 "5ac51d900f03af14"
@@ -447,7 +447,7 @@
         "topic": "payload",
         "topicType": "msg",
         "x": 280,
-        "y": 900,
+        "y": 1020,
         "wires": [
             [
                 "dc0db6a886727bf7"
@@ -475,7 +475,7 @@
         "topic": "payload",
         "topicType": "msg",
         "x": 280,
-        "y": 980,
+        "y": 1100,
         "wires": [
             [
                 "bcc01b80ade0e9be"
@@ -635,7 +635,7 @@
         "finalize": "",
         "libs": [],
         "x": 1080,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "d82d9e1982e1a41f",
@@ -657,7 +657,7 @@
         "layout": "col-center",
         "className": "",
         "x": 1280,
-        "y": 540,
+        "y": 600,
         "wires": []
     },
     {
@@ -674,7 +674,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1270,
-        "y": 500,
+        "y": 560,
         "wires": []
     },
     {
@@ -716,7 +716,7 @@
         "type": "postgresql",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "query": "INSERT INTO POWER_MONITOR(\n    d_POWER,\n    d_VOLTAGE,\n    d_CURRENT,\n    d_TIME\n)\nVALUES(\n    {{msg.payload.power}}, \n    {{msg.payload.voltage}}, \n    {{msg.payload.current}},\n    current_timestamp\n);\n",
+        "query": "INSERT INTO POWER_MONITOR(\n    TIME,\n    ID,\n    POWER,\n    VOLTAGE,\n    CURRENT\n)\nVALUES(\n    current_timestamp,\n    01,\n    {{msg.payload.power}}, \n    {{msg.payload.voltage}}, \n    {{msg.payload.current}}\n);\n",
         "postgreSQLConfig": "2d8f3d1f01aff7b5",
         "split": false,
         "rowsPerMsg": 1,
@@ -796,8 +796,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1120,
-        "y": 1240,
+        "x": 1540,
+        "y": 360,
         "wires": []
     },
     {
@@ -821,8 +821,8 @@
         "topic": "reset",
         "payload": "true",
         "payloadType": "bool",
-        "x": 940,
-        "y": 1220,
+        "x": 1360,
+        "y": 360,
         "wires": [
             [
                 "0f59319f831cb163"
@@ -882,7 +882,7 @@
         "type": "postgresql",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "query": "INSERT INTO PLC_MONITOR(\n    d_y40,\n    d_y46,\n    d_y48,\n    d_TIME\n)\nVALUES(\n    {{msg.payload.Y40}}, \n    {{msg.payload.Y46}}, \n    {{msg.payload.Y48}},\n    current_timestamp\n);",
+        "query": "INSERT INTO PLC_MONITOR_1(\n    TIME,\n    ID,\n    Y40,\n    Y46,\n    Y48\n    \n)\nVALUES(\n    current_timestamp,\n    02,\n    {{msg.payload.Y40}}, \n    {{msg.payload.Y46}}, \n    {{msg.payload.Y48}}\n\n);",
         "postgreSQLConfig": "2d8f3d1f01aff7b5",
         "split": false,
         "rowsPerMsg": 1,
@@ -921,7 +921,7 @@
         "stateLogEnabled": false,
         "queueLogEnabled": false,
         "failureLogEnabled": true,
-        "tcpHost": "192.168.3.60",
+        "tcpHost": "192.168.3.25",
         "tcpPort": "502",
         "tcpType": "DEFAULT",
         "serialPort": "/dev/ttyUSB",
@@ -993,7 +993,7 @@
         "id": "2d8f3d1f01aff7b5",
         "type": "postgreSQLConfig",
         "name": "mypostgres",
-        "host": "192.168.3.50",
+        "host": "192.168.3.22",
         "hostFieldType": "str",
         "port": "5432",
         "portFieldType": "num",
