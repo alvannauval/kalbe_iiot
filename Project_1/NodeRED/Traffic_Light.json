@@ -1,0 +1,1798 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "83a36fc92196d4a5",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b791d0321ff062af",
+        "type": "modbus-client",
+        "name": "PowerTag",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.3.25",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "4587f7f29b7173bb",
+        "type": "MC Protocol Connection",
+        "name": "MitsubishiQ40UDEH",
+        "host": "192.168.3.39",
+        "port": "1026",
+        "protocol": "TCP",
+        "frame": "1E",
+        "plcType": "Q",
+        "ascii": true,
+        "PLCStation": "",
+        "PCStation": "",
+        "PLCModuleNo": "",
+        "network": "",
+        "octalInputOutput": false,
+        "timeout": "1000"
+    },
+    {
+        "id": "8587a3e6d8ecd311",
+        "type": "ui_group",
+        "name": "std_ui",
+        "tab": "4b4eef414947cf72",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4b4eef414947cf72",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a3983907759fdfb3",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "dd9f253ebfb38ab1",
+        "type": "ui_group",
+        "name": "Traffic Light State",
+        "tab": "4b4eef414947cf72",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2d8f3d1f01aff7b5",
+        "type": "postgreSQLConfig",
+        "name": "mypostgres",
+        "host": "192.168.3.50",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "12345678",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "a991bbd6303d7072",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "4b4eef414947cf72",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "20ae1e52d1eef983",
+        "type": "postgreSQLConfig",
+        "name": "myuser@timescale:5432/iot",
+        "host": "timescale",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "iot",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "myuser",
+        "userFieldType": "str",
+        "password": "???",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "44d9222c.07961c",
+        "type": "ui_group",
+        "name": "Charts",
+        "tab": "f779dd92.cf698",
+        "order": 2,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "afe97566.fbda58",
+        "type": "ui_group",
+        "name": "Inputs",
+        "tab": "f779dd92.cf698",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "ef33233b.dd28f",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "f779dd92.cf698",
+        "order": 3,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "f779dd92.cf698",
+        "type": "ui_tab",
+        "name": "Charts",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "0e8f775243bc4b11",
+        "type": "modbus-client",
+        "name": "OmronCP1E",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.3.47",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "906c8c6df20628be",
+        "type": "modbus-client",
+        "name": "Weintek-Q04UDEH",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.3.40",
+        "tcpPort": "4999",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "a97a7848bb13f286",
+        "type": "MC Protocol Connection",
+        "name": "test",
+        "host": "192.168.3.40",
+        "port": "4999",
+        "protocol": "TCP",
+        "frame": "1E",
+        "plcType": "Q",
+        "ascii": true,
+        "PLCStation": "",
+        "PCStation": "",
+        "PLCModuleNo": "",
+        "network": "",
+        "octalInputOutput": false,
+        "timeout": "1000"
+    },
+    {
+        "id": "aaa7d87d9a402311",
+        "type": "modbus-client",
+        "name": "weintek",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.3.47",
+        "tcpPort": "502",
+        "tcpType": "TCP-RTU-BUFFERED",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "10352bb707f0348b",
+        "type": "postgreSQLConfig",
+        "name": "postgres",
+        "host": "192.168.3.50",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "12345678",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "0955055e732df784",
+        "type": "modbus-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read RMS Current",
+        "topic": "Current",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "2999",
+        "quantity": "2",
+        "rate": "10",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "b791d0321ff062af",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "325986f9308d4712"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0a235f719a17dd7f",
+        "type": "modbus-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read P-N Voltage",
+        "topic": "Voltage",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "3027",
+        "quantity": "2",
+        "rate": "10",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "b791d0321ff062af",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "326776f7f425afef"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "385829240517dc0d",
+        "type": "buffer-parser",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "power",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 550,
+        "y": 180,
+        "wires": [
+            [
+                "2d2dcf0d6e3454e7",
+                "aed21ecaf39efc3c",
+                "8d557eb9fd45cb31",
+                "66ec3ea10c890206"
+            ]
+        ]
+    },
+    {
+        "id": "325986f9308d4712",
+        "type": "buffer-parser",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "current",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "8d557eb9fd45cb31",
+                "fe8b22195ca7146d"
+            ]
+        ]
+    },
+    {
+        "id": "326776f7f425afef",
+        "type": "buffer-parser",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "voltage",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 550,
+        "y": 420,
+        "wires": [
+            [
+                "8d557eb9fd45cb31",
+                "2d2dcf0d6e3454e7",
+                "c110f7e5c33987a1"
+            ]
+        ]
+    },
+    {
+        "id": "8d557eb9fd45cb31",
+        "type": "join",
+        "z": "f6f2187d.f17ca8",
+        "name": "PowerMonitor",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 880,
+        "y": 340,
+        "wires": [
+            [
+                "8c23ecc2438845e0",
+                "95b16bf92c7edce3"
+            ]
+        ]
+    },
+    {
+        "id": "50e1eadf395af5f1",
+        "type": "MC Read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read Y40",
+        "topic": "",
+        "connection": "4587f7f29b7173bb",
+        "address": "Y40",
+        "addressType": "str",
+        "outputFormat": "0",
+        "errorHandling": "throw",
+        "outputs": 1,
+        "x": 540,
+        "y": 660,
+        "wires": [
+            [
+                "8fade436086716e7",
+                "ee82bfdaed906236"
+            ]
+        ]
+    },
+    {
+        "id": "894cb1bd94a4f414",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1.5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 720,
+        "wires": [
+            [
+                "50e1eadf395af5f1",
+                "d0c7d460f4734aa4",
+                "2c2f04197e54e1e9"
+            ]
+        ]
+    },
+    {
+        "id": "d0c7d460f4734aa4",
+        "type": "MC Read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read Y46",
+        "topic": "",
+        "connection": "4587f7f29b7173bb",
+        "address": "Y46",
+        "addressType": "str",
+        "outputFormat": "0",
+        "errorHandling": "throw",
+        "outputs": 1,
+        "x": 540,
+        "y": 720,
+        "wires": [
+            [
+                "8fade436086716e7",
+                "ee82bfdaed906236"
+            ]
+        ]
+    },
+    {
+        "id": "2c2f04197e54e1e9",
+        "type": "MC Read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read Y48",
+        "topic": "",
+        "connection": "4587f7f29b7173bb",
+        "address": "Y48",
+        "addressType": "str",
+        "outputFormat": "0",
+        "errorHandling": "throw",
+        "outputs": 1,
+        "x": 540,
+        "y": 780,
+        "wires": [
+            [
+                "8fade436086716e7",
+                "ee82bfdaed906236"
+            ]
+        ]
+    },
+    {
+        "id": "8fade436086716e7",
+        "type": "join",
+        "z": "f6f2187d.f17ca8",
+        "name": "PLCMonitor",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 910,
+        "y": 720,
+        "wires": [
+            [
+                "8aced67458cc7b01",
+                "a698ba5049997946",
+                "f26cb74b3eb5fe39",
+                "5c6fc5d9c5cda774"
+            ]
+        ]
+    },
+    {
+        "id": "ee82bfdaed906236",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "dc0db6a886727bf7",
+        "type": "MC Write",
+        "z": "f6f2187d.f17ca8",
+        "name": "Write On",
+        "topic": "",
+        "connection": "4587f7f29b7173bb",
+        "data": "payload",
+        "address": "M1",
+        "addressType": "str",
+        "dataType": "msg",
+        "errorHandling": "throw",
+        "outputs": 1,
+        "x": 540,
+        "y": 1000,
+        "wires": [
+            [
+                "5ac51d900f03af14"
+            ]
+        ]
+    },
+    {
+        "id": "5ac51d900f03af14",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "bcc01b80ade0e9be",
+        "type": "MC Write",
+        "z": "f6f2187d.f17ca8",
+        "name": "Write Off",
+        "topic": "",
+        "connection": "4587f7f29b7173bb",
+        "data": "payload",
+        "address": "M1",
+        "addressType": "str",
+        "dataType": "msg",
+        "errorHandling": "throw",
+        "outputs": 1,
+        "x": 540,
+        "y": 1080,
+        "wires": [
+            [
+                "5ac51d900f03af14"
+            ]
+        ]
+    },
+    {
+        "id": "52c5390c9033574a",
+        "type": "ui_button",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "a991bbd6303d7072",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "On Button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "payload",
+        "topicType": "msg",
+        "x": 280,
+        "y": 1000,
+        "wires": [
+            [
+                "dc0db6a886727bf7"
+            ]
+        ]
+    },
+    {
+        "id": "dbd792abc4e177d4",
+        "type": "ui_button",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "a991bbd6303d7072",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Off Button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "payload",
+        "topicType": "msg",
+        "x": 280,
+        "y": 1080,
+        "wires": [
+            [
+                "bcc01b80ade0e9be"
+            ]
+        ]
+    },
+    {
+        "id": "03014da8242b585b",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Power Gauge",
+        "group": "8587a3e6d8ecd311",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "W",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 560,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8aced67458cc7b01",
+        "type": "ui_template",
+        "z": "f6f2187d.f17ca8",
+        "group": "dd9f253ebfb38ab1",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n    <head>\n        <style>\n            .container {\n                font-weight : bold;\n                text-align : center;\n                display : flex;\n                flex-direction : column;\n                justify-content : center;\n                align-items : center;\n                width : 100%;\n                height : 50vh;\n                overflow-x : hidden;\n                overflow-y : hidden;\n            }\n            .state {\n                height : 50px;\n                width : 50px;\n                border-radius : 50%;\n                background : #354259;\n            }\n            .red {\n                height : 50px;\n                width : 50px;\n                border-radius : 50%;\n                background : #F24C4C;\n            }\n            .yellow {\n                height : 50px;\n                width : 50px;\n                border-radius : 50%;\n                background : #FFD24C;\n            }\n            .green {\n                height : 50px;\n                width : 50px;\n                border-radius : 50%;\n                background : #14C38E;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div>\n                <div class=\"{{msg.payload.Y40 ? 'red' : 'state'}}\">\n                </div>\n                <br>\n            </div>\n\n            <div>\n                <div class=\"{{msg.payload.Y46 ? 'yellow' : 'state'}}\">\n                </div>\n                <br>\n            </div>\n\n            <div>\n                <div class=\"{{msg.payload.Y48 ? 'green' : 'state'}}\">\n                </div>\n            <div>\n            </div>\n            </div>\n        </div>\n    </body>\n</html>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f231c5c63d362150",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Current Gauge",
+        "group": "8587a3e6d8ecd311",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "A",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 560,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "fe234fa60cf5d816",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Voltage Gauge",
+        "group": "8587a3e6d8ecd311",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "Voltage",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "300",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 560,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "fe8b22195ca7146d",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "FixedNumber",
+        "func": "msg.payload = parseFloat(msg.payload.current).toFixed(2)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "f231c5c63d362150",
+                "2d2dcf0d6e3454e7"
+            ]
+        ]
+    },
+    {
+        "id": "c110f7e5c33987a1",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "FixedNumber",
+        "func": "msg.payload = parseFloat(msg.payload.voltage).toFixed(2)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "fe234fa60cf5d816"
+            ]
+        ]
+    },
+    {
+        "id": "a698ba5049997946",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 4",
+        "func": "var counter = context.get(\"counter\") || 0\n\nif(msg.payload.Y40 && msg.payload.Y46==false){\n    counter+=1\n    context.set(\"counter\", counter)\n    msg.payload = counter \n}\n\nelse{\n    msg.payload = counter\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 620,
+        "wires": [
+            [
+                "d82d9e1982e1a41f",
+                "229250c41409599c"
+            ]
+        ]
+    },
+    {
+        "id": "d82d9e1982e1a41f",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "8587a3e6d8ecd311",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Counter Merah",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1280,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "229250c41409599c",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "8c23ecc2438845e0",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2d2dcf0d6e3454e7",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "95b16bf92c7edce3",
+        "type": "postgresql",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "query": "INSERT INTO POWER_MONITOR(\n    TIME,\n    ID,\n    POWER,\n    VOLTAGE,\n    CURRENT\n)\nVALUES(\n    current_timestamp,\n    01,\n    {{msg.payload.power}}, \n    {{msg.payload.voltage}}, \n    {{msg.payload.current}}\n);\n",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1090,
+        "y": 340,
+        "wires": [
+            [
+                "8889a74dffc2e079"
+            ]
+        ]
+    },
+    {
+        "id": "8889a74dffc2e079",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "aed21ecaf39efc3c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "FixedNumber",
+        "func": "msg.payload = parseFloat(msg.payload.power).toFixed(2)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 220,
+        "wires": [
+            [
+                "03014da8242b585b",
+                "66ec3ea10c890206"
+            ]
+        ]
+    },
+    {
+        "id": "601d29bb1a80fb50",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0f59319f831cb163",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "399cb46f61dc65ef",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "reset",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 300,
+        "y": 900,
+        "wires": [
+            [
+                "0f59319f831cb163"
+            ]
+        ]
+    },
+    {
+        "id": "563071ab584709d2",
+        "type": "modbus-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read Power",
+        "topic": "Power",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "3075",
+        "quantity": "2",
+        "rate": "10",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "b791d0321ff062af",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "385829240517dc0d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "66ec3ea10c890206",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 14",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5c6fc5d9c5cda774",
+        "type": "postgresql",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "query": "INSERT INTO PLC_MONITOR_1(\n    TIME,\n    ID,\n    Y40,\n    Y46,\n    Y48\n    \n)\nVALUES(\n    current_timestamp,\n    02,\n    {{msg.payload.Y40}}, \n    {{msg.payload.Y46}}, \n    {{msg.payload.Y48}}\n\n);",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1130,
+        "y": 720,
+        "wires": [
+            [
+                "601d29bb1a80fb50"
+            ]
+        ]
+    },
+    {
+        "id": "f26cb74b3eb5fe39",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9264791753a163da",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "ac0950a6e4a87cc8",
+        "type": "modbus-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read Omron",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "3",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "aaa7d87d9a402311",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 290,
+        "y": 1260,
+        "wires": [
+            [
+                "aaa6839ef1adb464"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2070a53db2a904d9",
+        "type": "postgresql",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "query": "INSERT INTO plc_monitor_2(\n    time,\n    id,\n    q0,\n    q1,\n    q2\n)\nVALUES(\n    current_timestamp,\n    3,\n    {{msg.payload.Q0}},\n    {{msg.payload.Q1}},\n    {{msg.payload.Q2}}\n);",
+        "postgreSQLConfig": "10352bb707f0348b",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 750,
+        "y": 1260,
+        "wires": [
+            [
+                "9264791753a163da"
+            ]
+        ]
+    },
+    {
+        "id": "aaa6839ef1adb464",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 5",
+        "func": "var addr = [\"Q0\", \"Q1\", \"Q2\"];// list of names\nvar hold_obj = {};// `temp object\naddr.forEach((v, i) => hold_obj[v] = msg.payload[i]) //loop through names and add to object\nmsg.payload = hold_obj; // move back to payload\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1260,
+        "wires": [
+            [
+                "2070a53db2a904d9",
+                "670118591a76908c"
+            ]
+        ]
+    },
+    {
+        "id": "670118591a76908c",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "8246c97550a77453",
+        "type": "postgresql",
+        "z": "83a36fc92196d4a5",
+        "name": "toPostgreSQL",
+        "query": "CREATE TABLE plc_monitor_2(\n   TIME      TIME WITHOUT TIME ZONE,\n   ID\t\t VARCHAR(25),\n   Q10000       BOOLEAN     NOT NULL,\n   Q10001       BOOLEAN     NOT NULL,\n   Q10002       BOOLEAN     NOT NULL\n);",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 720,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "90b28f1f197a50f2",
+        "type": "inject",
+        "z": "83a36fc92196d4a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 460,
+        "wires": [
+            [
+                "8246c97550a77453"
+            ]
+        ]
+    },
+    {
+        "id": "8c3c2e36da3a4479",
+        "type": "postgresql",
+        "z": "83a36fc92196d4a5",
+        "name": "toPostgreSQL",
+        "query": "DROP TABLE PLC_MONITOR;",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 720,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48d5d63939a7b398",
+        "type": "inject",
+        "z": "83a36fc92196d4a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 540,
+        "wires": [
+            [
+                "8c3c2e36da3a4479"
+            ]
+        ]
+    },
+    {
+        "id": "b2147debb52d4cf8",
+        "type": "postgresql",
+        "z": "83a36fc92196d4a5",
+        "name": "toPostgreSQL",
+        "query": "INSERT INTO POWER_MONITOR(\n    d_TIME\n    d_POWER,\n    d_VOLTAGE,\n    d_CURRENT\n)\nVALUES\n(1, 61, 221, 11),\n(2, 62, 222, 12),\n(3, 63, 223, 13);",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 720,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a2bed8aacbe0333",
+        "type": "inject",
+        "z": "83a36fc92196d4a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 620,
+        "wires": [
+            [
+                "b2147debb52d4cf8"
+            ]
+        ]
+    },
+    {
+        "id": "c41a52702ca0ba9b",
+        "type": "comment",
+        "z": "83a36fc92196d4a5",
+        "name": "BIKIN TABEL PLC",
+        "info": "",
+        "x": 970,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c935548c0b9723ae",
+        "type": "comment",
+        "z": "83a36fc92196d4a5",
+        "name": "HAPUS TABLE",
+        "info": "",
+        "x": 960,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3c0cf1462433a3fd",
+        "type": "comment",
+        "z": "83a36fc92196d4a5",
+        "name": "INSERT DATA",
+        "info": "",
+        "x": 950,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "75f0e460b851849f",
+        "type": "postgresql",
+        "z": "83a36fc92196d4a5",
+        "name": "toPostgreSQL",
+        "query": "CREATE TABLE POWER_MONITOR(\n   d_TIME          VARCHAR(50)        ,\n   d_ID        VARCHAR(25)         ,\n   d_POWER         REAL       NOT NULL,\n   d_VOLTAGE       REAL       NOT NULL,\n   d_CURRENT       REAL       NOT NULL\n);",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 720,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78bfaa594ffbd972",
+        "type": "inject",
+        "z": "83a36fc92196d4a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 220,
+        "wires": [
+            [
+                "75f0e460b851849f"
+            ]
+        ]
+    },
+    {
+        "id": "7a7c09f4387bcab5",
+        "type": "comment",
+        "z": "83a36fc92196d4a5",
+        "name": "BIKIN TABEL POWERMONITOR",
+        "info": "",
+        "x": 1010,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c56184fa714c1dc1",
+        "type": "postgresql",
+        "z": "83a36fc92196d4a5",
+        "name": "toPostgreSQL",
+        "query": "DROP TABLE PoWER_MONITOR;",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 720,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee01bd83d103bc31",
+        "type": "inject",
+        "z": "83a36fc92196d4a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 280,
+        "wires": [
+            [
+                "c56184fa714c1dc1"
+            ]
+        ]
+    },
+    {
+        "id": "8054a009c48dc707",
+        "type": "comment",
+        "z": "83a36fc92196d4a5",
+        "name": "HAPUS TABLE",
+        "info": "",
+        "x": 960,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c286a38a83178faa",
+        "type": "postgresql",
+        "z": "83a36fc92196d4a5",
+        "name": "toPostgreSQL",
+        "query": "CREATE TABLE MACHINE_DATA(\n   d_ID           REAL       ,\n   d_NAME         VARCHAR(25)       NOT NULL,\n   d_LOCATION     VARCHAR(25)NOT NULL\n);",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 720,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5cb7fcd04b1cfd40",
+        "type": "inject",
+        "z": "83a36fc92196d4a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 820,
+        "wires": [
+            [
+                "c286a38a83178faa"
+            ]
+        ]
+    },
+    {
+        "id": "5b5151291bb01fd0",
+        "type": "comment",
+        "z": "83a36fc92196d4a5",
+        "name": "BIKIN TABEL MACHINE DATA",
+        "info": "",
+        "x": 1010,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "3f962092a96ab759",
+        "type": "postgresql",
+        "z": "83a36fc92196d4a5",
+        "name": "toPostgreSQL",
+        "query": "INSERT INTO MACHINE_DATA(\n   d_ID,\n   d_NAME,         \n   d_LOCATION\n)\nVALUES\n(1, 'PLC-Q40UDEH','DOJO'),\n(2, 'POWERTAG', 'DOJO');\n",
+        "postgreSQLConfig": "2d8f3d1f01aff7b5",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 720,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06089daf3c0dc54a",
+        "type": "inject",
+        "z": "83a36fc92196d4a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 900,
+        "wires": [
+            [
+                "3f962092a96ab759"
+            ]
+        ]
+    },
+    {
+        "id": "7823e1661164f073",
+        "type": "comment",
+        "z": "83a36fc92196d4a5",
+        "name": "INSERT DATA",
+        "info": "",
+        "x": 950,
+        "y": 900,
+        "wires": []
+    }
+]
