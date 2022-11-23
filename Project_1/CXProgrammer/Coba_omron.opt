@@ -6,10 +6,10 @@ BEGIN
   BarID:=59422;
   Bars:=6;
   Bar[0]:=0;
-  Bar[1]:=59415;
-  Bar[2]:=59416;
-  Bar[3]:=59412;
-  Bar[4]:=59414;
+  Bar[1]:=59414;
+  Bar[2]:=59415;
+  Bar[3]:=59416;
+  Bar[4]:=59412;
   Bar[5]:=0;
   Style:=0;
   ExStyle:=0;
@@ -182,7 +182,7 @@ BEGIN
  Item[3]:=14;
  ItemCount:=4;
  Sumcheck:=44;
- Selected:=12;
+ Selected:=18;
 END;
 Frame[0]:=
 BEGIN
@@ -203,7 +203,7 @@ Frame[1]:=
 BEGIN
  Norm:="0078 0078 1484 0541";
  Min:="-001 -001";
- Path:="D:\User\Documents\Kalbe\kalbe_iiot\Project_1\Coba_omron.cxp";
+ Path:="D:\User\Documents\Kalbe\kalbe_iiot\Project_1\CXProgrammer\Coba_omron.cxp";
  Access:="PROJECT:!NewProject.Resources.NewResource1.Symbols";
  Type:=3;
  Views:=

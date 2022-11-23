@@ -1,0 +1,240 @@
+[
+    {
+        "id": "2981a8d1b0e5d990",
+        "type": "tab",
+        "label": "FX5U NAT Exp",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bfb9dc6277c076e7",
+        "type": "debug",
+        "z": "2981a8d1b0e5d990",
+        "name": "debug 28",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5d8813dc45ab428f",
+        "type": "modbus-read",
+        "z": "2981a8d1b0e5d990",
+        "name": "FX5U",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "0",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "3",
+        "rate": "1500",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "19f850168e60cd56",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "bfb9dc6277c076e7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e876cc68ba4b4cda",
+        "type": "debug",
+        "z": "2981a8d1b0e5d990",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dc27fa0806fc09a2",
+        "type": "modbus-read",
+        "z": "2981a8d1b0e5d990",
+        "name": "PowerTag",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "2999",
+        "quantity": "2",
+        "rate": "1500",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "6d2b2b22ee417619",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 260,
+        "y": 100,
+        "wires": [
+            [
+                "e876cc68ba4b4cda"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "213815ccc53e40b5",
+        "type": "MC Read",
+        "z": "2981a8d1b0e5d990",
+        "name": "Q04UDEH",
+        "topic": "",
+        "connection": "f11723a2c98f9c5e",
+        "address": "Y40",
+        "addressType": "str",
+        "outputFormat": 0,
+        "errorHandling": "throw",
+        "outputs": 1,
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [
+                "3e2156e57ccf732d"
+            ]
+        ]
+    },
+    {
+        "id": "37905e06d2d4a44e",
+        "type": "inject",
+        "z": "2981a8d1b0e5d990",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 320,
+        "wires": [
+            [
+                "213815ccc53e40b5"
+            ]
+        ]
+    },
+    {
+        "id": "3e2156e57ccf732d",
+        "type": "debug",
+        "z": "2981a8d1b0e5d990",
+        "name": "debug 30",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "19f850168e60cd56",
+        "type": "modbus-client",
+        "name": "FX5U-NAT",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "128.10.125.38",
+        "tcpPort": "1040",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "6d2b2b22ee417619",
+        "type": "modbus-client",
+        "name": "PowerTag",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "128.10.125.38",
+        "tcpPort": "1045",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "f11723a2c98f9c5e",
+        "type": "MC Protocol Connection",
+        "name": "Q04UDEH-NAT",
+        "host": "128.10.125.38",
+        "port": "1025",
+        "protocol": "TCP",
+        "frame": "1E",
+        "plcType": "Q",
+        "ascii": true,
+        "PLCStation": "",
+        "PCStation": "",
+        "PLCModuleNo": "",
+        "network": "",
+        "octalInputOutput": false,
+        "timeout": "1000"
+    }
+]
